@@ -8,12 +8,14 @@ import {ADMINISTRATION_ROUTES} from './administration.routing';
 import {MaterialModule} from '../../material/material.module';
 import {HttpClientModule} from '@angular/common/http';
 import {PersonsService} from './persons/persons.service';
+import { PersonsFormComponent } from './persons/persons-form/persons-form.component';
 
 registerLocaleData(localeGt);
 
 @NgModule({
   declarations: [
-    PersonsComponent
+    PersonsComponent,
+    PersonsFormComponent
   ],
   imports: [
     CommonModule,
