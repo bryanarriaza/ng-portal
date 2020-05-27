@@ -7,10 +7,11 @@ const APP_ROUTES: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent, canActivate: [AuthGuardService]},
 
-  // {
-  //   path: 'administration',
-  //   loadChildren: './portal/moduleadministration/administration.module#AdministrationModule'
-  // },
+  {
+    path: 'administration',
+    loadChildren: () => import('./portal/moduleadministration/administration.module').then(m => m.AdministrationModule),
+    canActivate: [AuthGuardService]
+  },
 
 ];
 

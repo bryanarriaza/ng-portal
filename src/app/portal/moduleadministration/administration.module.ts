@@ -6,6 +6,8 @@ import {RouterModule} from '@angular/router';
 import localeGt from '@angular/common/locales/es-GT';
 import {ADMINISTRATION_ROUTES} from './administration.routing';
 import {MaterialModule} from '../../material/material.module';
+import {HttpClientModule} from '@angular/common/http';
+import {PersonsService} from './persons/persons.service';
 
 registerLocaleData(localeGt);
 
@@ -17,8 +19,12 @@ registerLocaleData(localeGt);
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forChild(ADMINISTRATION_ROUTES),
-    MaterialModule
+    MaterialModule,
+  ],
+  providers: [
+    PersonsService
   ]
 })
 

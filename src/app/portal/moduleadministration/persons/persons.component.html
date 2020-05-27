@@ -1,33 +1,36 @@
-<div class="mat-elevation-z8">
-  <table mat-table [dataSource]="dataSource">
+<div class="persons-component col-6">
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
 
-    <!-- Position Column -->
-    <ng-container matColumnDef="position">
-      <th id="no" mat-header-cell *matHeaderCellDef> No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
+      <ng-container matColumnDef="id">
+        <th id="id" mat-header-cell *matHeaderCellDef> ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
 
-    <!-- Name Column -->
-    <ng-container matColumnDef="name">
-      <th id="name" mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
+      <ng-container matColumnDef="name">
+        <th id="name" mat-header-cell *matHeaderCellDef> Name</th>
+        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+      </ng-container>
 
-    <!-- Weight Column -->
-    <ng-container matColumnDef="weight">
-      <th id="weight" mat-header-cell *matHeaderCellDef> Weight </th>
-      <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
-    </ng-container>
+      <ng-container matColumnDef="lastname">
+        <th id="lastname" mat-header-cell *matHeaderCellDef> Lastname</th>
+        <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
+      </ng-container>
 
-    <!-- Symbol Column -->
-    <ng-container matColumnDef="symbol">
-      <th id="symbol" mat-header-cell *matHeaderCellDef> Symbol </th>
-      <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
-    </ng-container>
+      <ng-container matColumnDef="salary">
+        <th id="salary" mat-header-cell *matHeaderCellDef> Salary</th>
+        <td mat-cell *matCellDef="let element"> {{element.salary}} </td>
+      </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+      <ng-container matColumnDef="age">
+        <th id="age" mat-header-cell *matHeaderCellDef> Age</th>
+        <td mat-cell *matCellDef="let element"> {{element.age}} </td>
+      </ng-container>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="formElement(row)"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[20, 30, 40]" showFirstLastButtons></mat-paginator>
+  </div>
 </div>

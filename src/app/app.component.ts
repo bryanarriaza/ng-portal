@@ -30,7 +30,7 @@ export class AppComponent {
   getMenu(): Menu[] {
     this.menu = [
       {id: 1, title: 'Inicio', icon: 'group', route: 'home'},
-      {id: 2, title: 'Personas', icon: 'group', route: 'administration/persons'},
+      {id: 2, title: 'Personas', icon: 'group', route: '/administration/persons'},
     ];
     return this.menu;
   }
